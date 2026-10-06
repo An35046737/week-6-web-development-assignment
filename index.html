@@ -1,0 +1,157 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpendWise Budget Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>SpendWise</h2>
+
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#expenses">Expenses</a>
+                <a href="#add-expense">Add Expense</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+                <div>
+                    <h1>Budget Dashboard</h1>
+                    <p>Track your income and expenses in one place.</p>
+                </div>
+            </header>
+
+            <!-- Dashboard Cards -->
+            <section id="dashboard" class="cards">
+
+                <div class="card">
+                    <h3>Monthly Budget</h3>
+                    <p id="budgetAmount">KSh 50,000</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">KSh 0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Remaining Budget</h3>
+                    <p id="remainingBudget">KSh 50,000</p>
+                </div>
+
+                <div class="card">
+                    <h3>Expense Count</h3>
+                    <p id="expenseCount">0</p>
+                </div>
+
+            </section>
+
+            <!-- Budget Feedback -->
+            <section class="feedback-section">
+                <h2>Budget Status</h2>
+                <p id="budgetMessage">
+                    Add an expense to see your budget status.
+                </p>
+            </section>
+
+            <!-- Add Expense Form -->
+            <section id="add-expense" class="form-section">
+
+                <h2>Add Expense</h2>
+
+                <form id="expenseForm">
+
+                    <div class="form-group">
+                        <label for="expenseName">Expense Name</label>
+
+                        <input
+                            type="text"
+                            id="expenseName"
+                            placeholder="e.g. Groceries"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expenseAmount">Amount (KSh)</label>
+
+                        <input
+                            type="number"
+                            id="expenseAmount"
+                            placeholder="e.g. 2500"
+                            min="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expenseCategory">Category</label>
+
+                        <select id="expenseCategory" required>
+                            <option value="">Select category</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Savings">Savings</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Add Expense</button>
+
+                </form>
+
+            </section>
+
+            <!-- Expense List -->
+            <section id="expenses" class="expenses-section">
+
+                <h2>Expense Records</h2>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Expense</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="expenseTableBody">
+                            <!-- JavaScript adds expenses here -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
